@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2yy1jw8ayld7"]
+[gd_scene load_steps=4 format=3 uid="uid://d2yy1jw8ayld7"]
 
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_siuh0"]
 [ext_resource type="Texture2D" uid="uid://wnoqbieig8f3" path="res://Assets/Knights/16x16 knight 1 v3.png" id="1_v1wk2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akdxb"]
@@ -7,6 +8,8 @@ radius = 9.0
 height = 18.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_siuh0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
@@ -18,3 +21,15 @@ hframes = 8
 vframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 0)
+offset = Vector2(200, 0)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.7
+drag_right_margin = 0.1
+drag_bottom_margin = 0.7
