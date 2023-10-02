@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2yy1jw8ayld7"]
+
+[ext_resource type="Texture2D" uid="uid://wnoqbieig8f3" path="res://Assets/Knights/16x16 knight 1 v3.png" id="1_v1wk2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akdxb"]
+radius = 9.0
+height = 18.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_akdxb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v1wk2")
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
